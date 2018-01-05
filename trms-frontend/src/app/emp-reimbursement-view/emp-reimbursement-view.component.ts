@@ -9,7 +9,7 @@ import { EmpReimbursementService } from '../shared/emp-reimbursement.service';
   styleUrls: ['./emp-reimbursement-view.component.css']
 })
 export class EmpReimbursementViewComponent implements OnInit {
-  private empReimbursements;
+  public empReimbursements;
 
   constructor(private empReimService: EmpReimbursementService, private router: Router) { }
   
