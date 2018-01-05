@@ -1,0 +1,71 @@
+<div class="container">
+  <form>
+    <h3>Event Information</h3>
+    <div class="form-group">
+        <label for="new-event-name">Event Name</label>
+        <input [(ngModel)]="eventName" type="text" class="form-control" id="event-name" name="new-event-name" placeholder="Event Name" />
+    </div>
+    <div class="form-group">
+        <label for="new-event-type">Event Type</label>
+        <select [(ngModel)]="eventType" id="new-event-type" name="new-event-type" class="form-control">
+            <option *ngFor="let et of eventTypes" [value]="et.eventType">{{ et.eventType }}</option>
+        </select>
+    </div>
+    <div class="form-group">
+        <label for="new-grading-format">Grading Format</label>
+        <select [(ngModel)]="gradingFormat" id="new-grading-format" name="new-grading-format" class="form-control">
+            <option *ngFor="let gf of gradingFormats" [value]="gf.gradingFormat">{{ gf.gradingFormat }}</option>
+        </select>
+    </div>
+    <div class="form-group">
+        <label for="new-event-start-time">Event Start Date/Time</label>
+        <input [(ngModel)]="startDate" type="date" id="new-event-start-time" name="new-event-start-time" class="form-control" placeholder="yyyy-MM-dd" />
+    </div>
+    <div class="form-group">
+        <label for="new-event-cost">Cost (USD)</label>
+        <input [(ngModel)]="cost"  type="number" id="new-event-cost" name="new-event-cost" class="form-control"  placeholder="Cost" />
+    </div>
+    <div class="form-group">
+        <label for="new-event-description">Event Description</label>
+        <textarea [(ngModel)]="description" id="new-event-description" name="new-event-description" class="form-control" placeholder="Description" rows="5"></textarea>
+    </div>
+    <div class="form-group">
+        <label for="new-event-justification">Work-Related Justification</label>
+        <textarea [(ngModel)]="justification" id="new-event-justification" name="new-event-justification" class="form-control" placeholder="Work-Related Justification" rows="5"></textarea>
+    </div>
+    <h3>Event Location</h3>
+    <div class="form-group">
+        <label for="new-event-street-address-1">Street Address</label>
+        <input [(ngModel)]="streetAddress1" type="text" id="new-event-street-address-1" name="new-event-street-address-1" class="form-control" placeholder="Street Address Line 1" />
+    </div>
+    <div class="form-group">
+        <input [(ngModel)]="streetAddress2" type="text" id="new-event-street-address-2" name="new-event-street-address-2" class="form-control" placeholder="Street Address Line 2" />
+    </div>
+    <div class="form-group">
+        <label for="new-event-city">City</label>
+        <input [(ngModel)]="city" type="text" id="new-event-city" name="new-event-city" class="form-control" placeholder="City" />
+    </div>
+    <div class="form-group">
+        <label for="new-event-state">State</label>
+        <input [(ngModel)]="state" type="text" id="new-event-state" name="new-event-state" class="form-control" placeholder="State" />
+    </div>
+    <div class="form-group">
+        <label for="new-event-zipcode">Zip Code</label>
+        <input [(ngModel)]="zipCode" type="text" id="new-event-zipcode" name="new-event-zipcode" class="form-control" placeholder="Zip Code" />
+    </div>
+    <div class="form-group">
+        <label for="new-event-country">Country</label>
+        <input [(ngModel)]="country" type="text" id="new-event-country" name="new-event-country" class="form-control" placeholder="Country" />
+    </div>
+    <h3>Reimbursement Request Information</h3>
+    <div class="form-group">
+        <label for="new-reimbursement-amount">Reimbursement Amount Request</label>
+        <input [(ngModel)]="amountRequest" type="number" id="new-reimbursement-amount" name="new-reimbursement-amount" class="form-control" placeholder="Reimbursement Amount" />
+    </div>
+    <div class="form-group">
+        <label for="new-reimbursement-additional-info">Additional Information</label>
+        <textarea [(ngModel)]="addInfo" id="new-reimbursement-additional-info" name="new-reimbursement-additional-info" class="form-control" placeholder="Additional Information" rows="5"></textarea>
+    </div>
+    <button (click)="addReimbursement()" type="submit" class="btn btn-primary">Submit Reimbursement Form</button>
+  </form>
+</div>

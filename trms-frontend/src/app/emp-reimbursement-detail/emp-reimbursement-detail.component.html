@@ -1,0 +1,50 @@
+<div class="container">
+  <table class="table">
+    <tr>
+      <th>Event Name</th>
+      <td>{{ reimbursement.event.eventName }}</td>
+    </tr>
+    <tr>
+      <th>Event Type</th>
+      <td>{{ reimbursement.event.eventType }}</td>
+    </tr>
+    <tr>
+      <th>Grading Format</th>
+      <td>{{ reimbursement.event.gradingFormat }}</td>
+    </tr>
+    <tr>
+      <th>Event Start Date</th>
+      <td>{{ reimbursement.event.startTime.monthValue }}/{{ reimbursement.event.startTime.dayOfMonth }}/{{ reimbursement.event.startTime.year }}</td>
+    </tr>
+    <tr>
+      <th>Event Cost</th>
+      <td>{{ reimbursement.event.cost }}</td>
+    </tr>
+    <tr>
+      <th>Event Location</th>
+      <td>{{ reimbursement.event.location.streetAddress1 }}, {{ reimbursement.event.location.streetAddress2 }}, {{ reimbursement.event.location.city }}, {{ reimbursement.event.location.state }} {{ reimbursement.event.location.zipCode }} {{ reimbursement.event.location.country }}</td>
+    </tr>
+    <tr>
+      <th>Event Description</th>
+      <td>{{ reimbursement.description }}</td>
+    </tr>
+    <tr>
+      <th>Work-Related Justification</th>
+      <td>{{ reimbursement.workRelatedJustification }}</td>
+    </tr>
+    <tr>
+      <th>Amount Requested</th>
+      <td>{{ reimbursement.amountRequested | currency }}</td>
+    </tr>
+    <tr>
+      <th>Additional Information</th>
+      <td>{{ reimbursement.additionalInformation }}</td>
+    </tr>
+    <tr>
+      <th>Status</th>
+      <td>{{ reimbursement.reimbursementStatus }}</td>
+    </tr>
+  </table>
+  <button [hidden]="showApprovedDisapproved" (click)="approve()" type="button" class="btn btn-primary">Approve</button>
+  <button [hidden]="showApprovedDisapproved" (click)="disapprove()" type="button" class="btn btn-primary">Disapprove</button>
+</div>
